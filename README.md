@@ -19,6 +19,16 @@ deactivate an environemtn
 ```CMD
 deactivate <NAME> 
 ```
+freeze an environemtn
+```CMD
+conda env freeze <NAME>
+```
+better freeze
+```
+pipreqs . --force
+```
+
+
 list environments
 ```CMD
 conda info --envs
