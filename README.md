@@ -1,70 +1,55 @@
+# Create a virtual environment
+```
+python -m venv .\env_name
+```
 
-### Environments and Packages
-these are some python commands to create and use environments
-
-
-create an environment
-```CMD
-conda create -n <NAME> python=<version>
 ```
-deleting environment
-```CMD
-conda env remove -n ENV_NAME
-```
-activate an environemtn
-```CMD
-activate <NAME> 
-```
-deactivate an environemtn
-```CMD
-deactivate <NAME> 
-```
-freeze an environemtn
-```CMD
-conda env freeze <NAME>
-```
-better freeze
-```
-pipreqs . --force
+python -m venv .\env
 ```
 
 
-list environments
-```CMD
-conda info --envs
+# activate environment 
+```bash
+env\Scripts\activate
 ```
-Install packages
-```CMD
-conda install PACKAGE_NAME
+
+# deactivate 
+```bash
+deactivate
 ```
-remove package
-```CMD
-conda remove PACKAGE_NAME
+
 ```
-update package
-```CMD
-conda update package_name
+pipreqs . --force --encoding=utf8 --mode=gt
+python -m venv .\env
+.\env\Scripts\activate
+pip install -r requirements.txt
 ```
-search packages
-```CMD
-conda search '*beautifulsoup*'
+
 ```
-list packages
-```CMD
-conda list
+pipreqs . --force --encoding=utf8 --mode=gt
+C:\Users\JGarza\pythons\Python310\python.exe -m venv .\env
+.\env\Scripts\activate
+pip install -r requirements.txt
 ```
-create and add packages to environment
-```CMD
-conda create -n env_name [python=X.X] [LIST_OF_PACKAGES]
+
+
+# at the top of python
 ```
-exporting environment
-```CMD
-conda env export
-```
-```CMD
-conda env export > environment.yaml
-```
-```CMD
-conda env create -f environment.yaml 
-######## create an environment with the name environment.yaml
+try:
+    import os
+    import sys
+
+    # Get the path to the virtual environment's activation script
+    env_activate_path = os.path.join("env", "Scripts", "activate")
+
+    # Check if the virtual environment exists and the OS is Windows
+    if os.path.exists(env_activate_path) and sys.platform == "win32":
+        # Execute the activation script
+        activate_cmd = f'"{env_activate_path}"'
+        os.system(activate_cmd)
+
+    # Now you can continue with the rest of your script
+    print("Virtual environment activated!")
+except:
+    print("unable to use virtual environment")
 ```
