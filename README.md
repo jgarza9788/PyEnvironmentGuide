@@ -7,6 +7,11 @@ python -m venv .\env_name
 python -m venv .\env
 ```
 
+```
+python -3.10 -m venv .\env
+
+```
+
 
 # activate environment 
 ```bash
